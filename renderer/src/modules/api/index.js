@@ -110,6 +110,7 @@ export default class BdApi {
     get ReactUtils() {return ReactUtils;}
     get ContextMenu() {return ContextMenuAPI;}
     get Components() {return Components;}
+    get venmic() {return venmicAPI;}
     Net = {fetch}; 
 }
 

@@ -19,3 +19,4 @@ export const REGISTER_PRELOAD   = "bd-register-preload";
 export const GET_ACCENT_COLOR   = "bd-get-accent-color";
 export const OPEN_PATH          = "bd-open-path";
 export const HANDLE_PROTOCOL    = "bd-handle-protocol";
+export const GET_APP_METRICS    = "bd-get-app-metrics";

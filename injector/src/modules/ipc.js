@@ -142,6 +142,8 @@ const registerPreload = (event, path) => {
     app.commandLine.appendSwitch("preload", path);
 };
 
+const getAppMetrics = event => event.returnValue = app.getAppMetrics();
+
 export default class IPCMain {
     static registerEvents() {
         try {
@@ -156,6 +158,7 @@ export default class IPCMain {
             ipc.on(IPCEvents.WINDOW_SIZE, setWindowSize);
             ipc.on(IPCEvents.DEVTOOLS_WARNING, stopDevtoolsWarning);
             ipc.on(IPCEvents.REGISTER_PRELOAD, registerPreload);
+            ipc.on(IPCEvents.GET_APP_METRICS, getAppMetrics);
             ipc.handle(IPCEvents.GET_ACCENT_COLOR, getAccentColor);
             ipc.handle(IPCEvents.RUN_SCRIPT, runScript);
             ipc.handle(IPCEvents.OPEN_DIALOG, openDialog);

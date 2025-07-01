@@ -7,6 +7,7 @@ import request from "./request";
 import https from "./https";
 import buffer from "./buffer";
 import crypto from "./crypto";
+import venmic from "./venmic"
 import Remote from "./remote";
 import Logger from "common/logger";
 
@@ -45,6 +46,7 @@ export const createRequire = function (path) {
             case "module": return Module;
             case "buffer": return buffer;
             case "crypto": return crypto;
+            case "venmic": return venmic;
     
             default:
                 return Module._load(mod, path, createRequire);

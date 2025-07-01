@@ -20,10 +20,12 @@ import CommandAPI from "./commands";
 
 import ColorInput from "@ui/settings/components/color";
 import DropdownInput from "@ui/settings/components/dropdown";
+import DropdownMultiple from "@ui/settings/components/dropdownmultiple";
 import SettingItem from "@ui/settings/components/item";
 import KeybindInput from "@ui/settings/components/keybind";
 import NumberInput from "@ui/settings/components/number";
 import RadioInput from "@ui/settings/components/radio";
+import CheckboxInput from "@ui/settings/components/checkbox";
 import SearchInput from "@ui/settings/components/search";
 import SliderInput from "@ui/settings/components/slider";
 import SwitchInput from "@ui/settings/components/switch";
@@ -55,10 +57,12 @@ const Components = {
     get Tooltip() {return DiscordModules.Tooltip;},
     get ColorInput() {return ColorInput;},
     get DropdownInput() {return DropdownInput;},
+    get DropdownMultiple() {return DropdownMultiple;},
     get SettingItem() {return SettingItem;},
     get KeybindInput() {return KeybindInput;},
     get NumberInput() {return NumberInput;},
     get RadioInput() {return RadioInput;},
+    get CheckboxInput() {return CheckboxInput;},
     get SearchInput() {return SearchInput;},
     get SliderInput() {return SliderInput;},
     get SwitchInput() {return SwitchInput;},

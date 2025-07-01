@@ -36,26 +36,26 @@
 .bd-select {
     position: relative;
     cursor: pointer;
-    color: var(--text-normal);
-    font-size: 14px;
+    color: var(--text-default);
+    font-size: 16px;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--deprecated-text-input-bg);
-    border: 1px solid var(--deprecated-text-input-border);
-    border-radius: 3px;
-    padding: 5px 5px 5px 0;
-    transition: 150ms ease border-color;
+    background-color: var(--input-background);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius-sm);
+    padding: 8px 4px 8px 0px;
+    margin-left: -1px;
+    margin-right: -1px;
+    gap: 4px;
+    min-height: 26px;
+    line-height: 1.25;
 }
 
 .bd-select.bd-select-disabled {
     cursor: not-allowed;
     opacity: 0.5;
-}
-
-.bd-select:hover,
-.bd-select.menu-open {
-    border-color: var(--background-tertiary);
 }
 
 .bd-select.bd-select-transparent {
@@ -66,28 +66,32 @@
 }
 
 .bd-select-value {
-    padding-left: 8px;
+    margin-left: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 40px);
 }
 
 .bd-select-arrow {
-    margin-left: 10px;
     fill: var(--interactive-normal);
 }
 
 .bd-select .bd-select-options {
     position: absolute;
-    background: var(--background-secondary);
-    border-radius: 0 0 3px 3px;
+    background: var(--background-surface-higher);
+    border-radius: 6px;
     max-height: 300px;
-    min-width: calc(100% + 2px);
     overflow-y: auto;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px 0;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-top: 0;
-    margin-top: -1px;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    margin-top: 8px;
     margin-left: -1px;
+    margin-right: -1px;
     z-index: 2;
     top: 100%;
+    font-weight: 400;
+    width: -webkit-fill-available;
 }
 
 .bd-select-transparent .bd-select-options {
@@ -97,17 +101,42 @@
 }
 
 .bd-select .bd-select-option {
-    padding: 8px 12px;
+    padding: 8px 4px 8px 0px;
     cursor: pointer;
-    white-space: pre;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    min-height: 28px;
+}
+
+.bd-select .bd-select-option .bd-select-option-value {
+    margin-left: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 42px);
+}
+
+.bd-select .bd-select-option .bd-select-checkmark {
+    background-color: var(--brand-500);
+    border-radius: 50%;
+    padding: 2px;
+    margin-right: 8px;
 }
 
 .bd-select .bd-select-option:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background-color: var(--background-modifier-hover);
+    color: var(--interactive-hover);
 }
 
 .bd-select .bd-select-option.selected {
-    background: rgba(0, 0, 0, 0.2);
+    background-color: var(--background-modifier-selected);
+    color: var(--interactive-active);
+    font-weight: var(--font-weight-medium);
 }
 
 .bd-setting-item .bd-select {

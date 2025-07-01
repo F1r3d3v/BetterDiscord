@@ -1,6 +1,7 @@
 import React from "@modules/react";
 
 import Arrow from "@ui/icons/downarrow";
+import Checkmark from "@ui/icons/check";
 
 const {useState, useCallback} = React;
 
@@ -36,7 +37,10 @@ export default function Select({value: initialValue, options, style, onChange, d
     const selected = options.find(o => o.value == value) ?? options[0];
     const optionComponents = <div className="bd-select-options">
             {options.map(opt =>
-                <div className={`bd-select-option${selected.value == opt.value ? " selected" : ""}`} onClick={() => change(opt.value)}>{opt.label}</div>
+                <div className={`bd-select-option${selected.value == opt.value ? " selected" : ""}`} onClick={() => change(opt.value)}>
+                    <div className="bd-select-option-value">{opt.label}</div>
+                    {selected.value == opt.value && <Checkmark className="bd-select-checkmark" size="14px" />}
+                </div>
             )}
         </div>;
 
@@ -45,7 +49,7 @@ export default function Select({value: initialValue, options, style, onChange, d
     const isDisabled = disabled ? " bd-select-disabled" : "";
     return <div className={`bd-select${styleClass}${isOpen}${isDisabled}`} onClick={showMenu}>
                 <div className="bd-select-value">{selected.label}</div>
-                <Arrow className="bd-select-arrow" />
+                <Arrow className="bd-select-arrow" size="24px" flip={open} />
                 {open && optionComponents}
             </div>;
 }

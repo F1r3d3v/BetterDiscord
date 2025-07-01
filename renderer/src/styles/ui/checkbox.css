@@ -5,6 +5,7 @@
     user-select: none;
     gap: 8px;
     cursor: pointer;
+    margin-left: -1px;
 }
 
 .bd-checkbox.bd-checkbox-has-label {
@@ -42,7 +43,7 @@
     border-radius: 6px;
 }
 .bd-checkbox-input:checked + .bd-checkbox-box {
-    border-color: var(--brand-400);
+    border-color: var(--brand-500);
     background-color: var(--brand-500);
 }
 
@@ -53,6 +54,8 @@
 .bd-checkbox-label {
     flex: 1 1 auto;
     min-width: 0;
+    color: var(--text-default);
+    font-size: 14px;
 }
 
 .bd-checkbox.bd-checkbox-disabled {

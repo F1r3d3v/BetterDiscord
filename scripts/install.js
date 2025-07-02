@@ -147,27 +147,27 @@ function injectShims(targetPath, asarPath) {
 (async () => {
     lognewline("Creating required directories...");
     const makeDirErr = makeDirectories(bdFolder, bdDataFolder, bdThemesFolder, bdPluginsFolder);
-    if (makeDirErr) return -1;
+    if (makeDirErr) process.exit(-1);
     log("✅ Directories created");
 
 
     lognewline("Compiling asar file");
     const compileErr = await compileAndInstallAsar();
-    if (compileErr) return -1;
+    if (compileErr) process.exit(-1);
     log("✅ Asar installed");
 
 
     lognewline("Installing Venmic...");
     const venmicErr = installVenmic();
-    if (venmicErr) return -1;
+    if (venmicErr) process.exit(-1);
     log("✅ Venmic installed");
 
 
     lognewline("Injecting shims...");
     const injectErr = injectShims(discordPath, bdAsarPath);
-    if (injectErr) return -1;
+    if (injectErr) process.exit(-1);
     log("✅ Shims injected");
 
-    return 0;
+    process.exit(0);
 })();
 

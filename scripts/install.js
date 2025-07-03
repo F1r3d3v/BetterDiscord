@@ -63,7 +63,7 @@ function makeDirectories(...folders) {
             continue;
         }
         try {
-            fs.mkdir(folder);
+            fs.mkdirSync(folder);
             log(`✅ Directory created: ${folder}`);
         }
         catch (err) {
